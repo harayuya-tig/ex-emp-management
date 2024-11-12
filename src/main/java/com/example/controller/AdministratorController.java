@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.form.InsertAdministratorForm;
 
 @Controller
-@RequestMapping("/administrator")
+@RequestMapping("")
 public class AdministratorController {
     
     @GetMapping("/toInsert")
