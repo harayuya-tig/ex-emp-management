@@ -24,6 +24,7 @@ public class AdministratorController {
      * @param form ログイン画面入力情報
      * @return ログイン画面のview
      */
+    @GetMapping("")
     public String toLogin(LoginForm form) {
         return "administrator/login";
     }
