@@ -10,12 +10,23 @@ import com.example.domain.Administrator;
 import com.example.form.InsertAdministratorForm;
 import com.example.service.AdministratorService;
 
+import com.example.form.LoginForm;
+
 @Controller
 @RequestMapping("")
 public class AdministratorController {
     
     @Autowired
     private AdministratorService administratorService;
+
+    /**
+     * ログイン画面へフォワードする
+     * @param form ログイン画面入力情報
+     * @return ログイン画面のview
+     */
+    public String toLogin(LoginForm form) {
+        return "administrator/login";
+    }
 
     /**
      * 管理者情報登録画面へフォワードする
