@@ -5,7 +5,7 @@
 
 package com.example.form;
 
-public class AdministratorForm {
+public class InsertAdministratorForm {
     
     /** 名前 */
     private String name;
