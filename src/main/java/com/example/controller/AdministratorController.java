@@ -17,7 +17,7 @@ import com.example.form.LoginForm;
 @Controller
 @RequestMapping("")
 public class AdministratorController {
-    
+
     /** サービスクラスの変数の宣言 */
     @Autowired
     private AdministratorService administratorService;
