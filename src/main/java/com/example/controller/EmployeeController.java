@@ -44,9 +44,12 @@ public class EmployeeController {
         return "employee/list";
     }
 
+    @GetMapping("/showDetail")
     public String showDetail(String id, UpdateEmployeeForm form, Model model) {
         Employee employee = employeeService.showDetail(Integer.parseInt(id));
         
+        System.out.println(employee.getName());
+
         model.addAttribute("employee", employee);
 
         return "employee/detail";
