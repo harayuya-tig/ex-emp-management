@@ -105,7 +105,7 @@
                   <tr>
                     <th nowrap>写真</th>
                     <td>
-                      <img src="../../static/img/e2.png" />
+                      <img th:src="@{/img/{imageName}(imageName=${employee.image})}"/>
                     </td>
                   </tr>
                   <tr>
