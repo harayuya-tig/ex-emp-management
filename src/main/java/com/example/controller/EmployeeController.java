@@ -13,7 +13,7 @@ import com.example.form.UpdateEmployeeForm;
 import com.example.service.EmployeeService;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/employee")
 public class EmployeeController {
     
     /** サービスクラスのオブジェクトを注入 */
@@ -35,8 +35,12 @@ public class EmployeeController {
     public String showList(Model model) {
         List<Employee> employeeList = employeeService.showList();
         
+        for (Employee employee : employeeList) {
+            System.out.println(employee.getDependentsCount());
+        }
+        
         model.addAttribute("employeeList", employeeList);
 
-        return "employee/list.html";
+        return "employee/list";
     }
 }
