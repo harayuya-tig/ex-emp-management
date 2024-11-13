@@ -20,8 +20,8 @@ public class AdministratorService {
      * @param password
      * @return 該当する管理者情報
      */
-    public Administrator login(String mailAddres, String password) {
-        return administratorRepository.findByMailAddressAndPassword(mailAddres, password);
+    public Administrator login(String mailAddress, String password) {
+        return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
     }
 
     /**
