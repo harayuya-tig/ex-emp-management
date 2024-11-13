@@ -1,6 +1,6 @@
 /**
  * ログイン時に使用するフォーム
- * @auther harayuya
+ * @author harayuya
  */
 
 package com.example.form;
