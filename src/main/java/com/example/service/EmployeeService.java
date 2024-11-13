@@ -18,7 +18,7 @@ public class EmployeeService {
     EmployeeRepository employeeRepository;
 
     /**
-     * 従業員情報を全県取得する
+     * 従業員情報を全件取得する
      * @return List<Employee> 全従業員情報のリスト
      */
     public List<Employee> showList() {
@@ -27,5 +27,14 @@ public class EmployeeService {
         employeeList = employeeRepository.findAll();
 
         return employeeList;
+    }
+
+    /**
+     * idで従業員の詳細情報を全件取得する
+     * @param id
+     * @return idに合致する従業員情報
+     */
+    public Employee showDetail(Integer id) {
+        return employeeRepository.load(id);
     }
 }
