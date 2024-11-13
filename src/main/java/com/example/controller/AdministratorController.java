@@ -15,7 +15,7 @@ import com.example.service.AdministratorService;
 import com.example.form.LoginForm;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("")
 public class AdministratorController {
     
     /** サービスクラスの変数の宣言 */
@@ -35,11 +35,14 @@ public class AdministratorController {
         return "administrator/login";
     }
 
+    /**
+     * ログイン処理
+     * @param loginForm ログイン画面の入力情報を受け取るフォーム
+     * @param model モデル
+     * @return ログイン情報が正しければ従業員一覧へ、間違っていれば再度ログイン画面へ
+     */
     @PostMapping("/login")
     public String login(LoginForm loginForm, Model model) {
-        
-        System.out.println(loginForm.getMailAddress());
-        System.out.println(loginForm.getPassword());
 
         try {
             Administrator administrator = administratorService.login(loginForm.getMailAddress(), loginForm.getPassword());
