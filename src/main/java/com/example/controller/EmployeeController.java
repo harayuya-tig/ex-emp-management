@@ -43,4 +43,12 @@ public class EmployeeController {
 
         return "employee/list";
     }
+
+    public String showDetail(String id, UpdateEmployeeForm form, Model model) {
+        Employee employee = employeeService.showDetail(Integer.parseInt(id));
+        
+        model.addAttribute("employee", employee);
+
+        return "employee/detail";
+    }
 }
