@@ -3,6 +3,7 @@ package com.example.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
@@ -10,9 +11,9 @@ import org.springframework.ui.Model;
 
 import com.example.domain.Administrator;
 import com.example.form.InsertAdministratorForm;
+import com.example.form.LoginForm;
 import com.example.service.AdministratorService;
 
-import com.example.form.LoginForm;
 
 @Controller
 @RequestMapping("")
@@ -24,6 +25,16 @@ public class AdministratorController {
     /** セッションクラスの変数の宣言 */
     @Autowired
     private HttpSession session;
+
+    /** フォームオブジェクトをrequestスコープに格納 */
+    @ModelAttribute
+    public LoginForm setUpLoginForm() {
+        return new LoginForm();
+    }
+    @ModelAttribute
+    public InsertAdministratorForm setUpInsertAdministratorForm() {
+        return new InsertAdministratorForm();
+    }
 
     /**
      * ログイン画面へフォワードする

@@ -16,15 +16,15 @@ import com.example.service.EmployeeService;
 @RequestMapping("")
 public class EmployeeController {
     
+    /** サービスクラスのオブジェクトを注入 */
+    @Autowired
+    private EmployeeService employeeService;
+
     /** フォームオブジェクトをrequestスコープに格納 */
     @ModelAttribute
     public UpdateEmployeeForm setUpForm() {
         return new UpdateEmployeeForm();
     }
-
-    /** サービスクラスのオブジェクトを注入 */
-    @Autowired
-    private EmployeeService employeeService;
 
     /** 
      * 従業員一覧を出力する
